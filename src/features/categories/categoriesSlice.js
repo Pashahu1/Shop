@@ -1,41 +1,41 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BASE_URL } from "../../utils/constants";
 
-
 export const getCategories = createAsyncThunk(
   "categories/getCategories",
-  async (_, thunkApi) => {
+  async (_, thunkAPI) => {
     try {
       const res = await axios(`${BASE_URL}/categories`);
       return res.data;
-    } catch(err) {
+    } catch (err) {
       console.log(err);
-      return thunkApi.rejectWithValue(err)
+      return thunkAPI.rejectWithValue(err);
     }
   }
 );
 
 const categoriesSlice = createSlice({
-  name: 'categories',
+  name: "categories",
   initialState: {
     list: [],
-    isLoading: false, 
+    isLoading: false,
   },
   extraReducers: (builder) => {
     builder.addCase(getCategories.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(getCategories.fulfilled, (state, {payload}) => {
+    builder.addCase(getCategories.fulfilled, (state, { payload }) => {
+      // const categoriesName = ["Clothes", "Electronics", "Furniture", "Shoes", "Others"];
+      // const filteredCategories = payload.filter(category => categoriesName.includes(category.name));
+      
       state.list = payload;
       state.isLoading = false;
-    })
-    builder.addCase(getCategories.rejected, (state, {payload}) => {
+    });
+    builder.addCase(getCategories.rejected, (state) => {
       state.isLoading = false;
-      console.log('Error')
-    })
-  }
-}) 
+    });
+  },
+});
 
 export default categoriesSlice.reducer;
-

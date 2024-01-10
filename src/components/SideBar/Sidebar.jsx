@@ -15,7 +15,7 @@ const Sidebar = () => {
             <li key={id}>
               <NavLink
                 className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`
-                }
+              }
                 to={`/categories/${id}`}
               >
                 {name}
@@ -28,7 +28,7 @@ const Sidebar = () => {
 
       <div className={styles.footer}>
         <a
-          href="!#Help" 
+          href="/Help" 
           className={styles.link}
           target="_blank"
         >
@@ -36,7 +36,7 @@ const Sidebar = () => {
         </a>
 
         <a
-          href="!#Terms" 
+          href="/Terms" 
           className={styles.link}
           target="_blank"
           style={{textDecoration: "underline"}}
