@@ -6,60 +6,39 @@ import { ROUTES } from "../../utils/routes";
 
 import LOGO from "../../images/logo.svg";
 
-const Footer = () => {
-  return (
-    <section className={styles.footer}>
-      <div className={styles.logo}>
-        <Link to={ROUTES.HOME}>
-          <img src={ LOGO } alt="Stuff" />
-        </Link>
-      </div>
-      
-      <div className={styles.rights}>
-        Developed by{" "}
-        <a 
-          href="https://github.com/Pashahu1"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Chudin
-        </a>
-      </div>
+const Footer = () => (
+  <section className={styles.footer}>
+    <div className={styles.logo}>
+      <Link to={ROUTES.HOME}>
+        <img src={LOGO} alt="Stuff" />
+      </Link>
+    </div>
 
-      <div className={styles.socials}>
-      <a 
-        href="https://www.instagram.com/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <svg className={styles["icon-fav"]}>
-          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#youtube`}></use>
+    <div className={styles.rights}>
+      Developed by{" "}
+      <a href="https://github.com/Pashahu1" target="_blank" rel="noreferrer">Chudin</a>
+    </div>
+
+    <div className={styles.socials}>
+      <a href="https://instagram.com" target="_blank" rel="noreferrer">
+        <svg className="icon">
+          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#instagram`} />
         </svg>
       </a>
 
-      <a 
-        href="https://github.com/Pashahu1"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <svg className={styles["icon-fav"]}>
-          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#facebook`}></use>
+      <a href="https://facebook.com" target="_blank" rel="noreferrer">
+        <svg className="icon">
+          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#facebook`} />
         </svg>
       </a>
 
-      <a 
-        href="https://github.com/Pashahu1"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <svg className={styles["icon-fav"]}>
-          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#instagram`}></use>
+      <a href="https://youtube.com" target="_blank" rel="noreferrer">
+        <svg className="icon">
+          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#youtube`} />
         </svg>
       </a>
-
-      </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Footer;
