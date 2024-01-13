@@ -16,7 +16,9 @@ const Footer = () => (
 
     <div className={styles.rights}>
       Developed by{" "}
-      <a href="https://github.com/Pashahu1" target="_blank" rel="noreferrer">Chudin</a>
+      <a href="https://github.com/Pashahu1" target="_blank" rel="noreferrer">
+        Chudin
+      </a>
     </div>
 
     <div className={styles.socials}>

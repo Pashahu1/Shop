@@ -26,9 +26,6 @@ const categoriesSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(getCategories.fulfilled, (state, { payload }) => {
-      // const categoriesName = ["Clothes", "Electronics", "Furniture", "Shoes", "Others"];
-      // const filteredCategories = payload.filter(category => categoriesName.includes(category.name));
-      
       state.list = payload;
       state.isLoading = false;
     });
